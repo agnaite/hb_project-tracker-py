@@ -69,6 +69,7 @@ def get_grade_by_github_title(student_github, project_title):
         WHERE student_github = :student_github 
         AND project_title = :project_title
         """
+        
     db_cursor = db.session.execute(QUERY, {'student_github': student_github, 'project_title': project_title})
     row = db_cursor.fetchone()
     print "Student's Grade is: %s\n" % (row[0])
